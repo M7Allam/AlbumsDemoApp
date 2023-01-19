@@ -1,0 +1,13 @@
+{
+  "English": "English",
+  "Arabic": "Arabic",
+  "welcomeBack": "Welcome back!",
+  "email": "Email",
+  "emptyField": "Empty field!",
+  "wrongEmailAddress": "Wrong email address!",
+  "login": "Login",
+  "password": "Password",
+  "passwordErrorMsg": "Password must at least 6 characters!",
+  "albums": "Albums",
+  "chooseLanguage": "Choose Language:"
+}

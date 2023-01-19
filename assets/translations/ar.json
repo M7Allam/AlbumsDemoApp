@@ -1,0 +1,13 @@
+{
+  "English": "الانجليزية",
+  "Arabic": "العربية",
+  "welcomeBack": "مرحبا بعودتك!",
+  "email": "البريد الإلكتروني",
+  "emptyField": "حقل فارغ!",
+  "wrongEmailAddress": "بريد إلكتروني خاطئ!",
+  "login": "تسجيل الدخول",
+  "password": "كلمة المرور",
+  "passwordErrorMsg": "يجب أن تحتوى كلمة المرور على 6 أحرف على الاقل!",
+  "albums": "الألبومات",
+  "chooseLanguage": "اختر اللغة:"
+}
