@@ -9,7 +9,7 @@ abstract class AppRoutes{
 }
 
 abstract class AppRouter{
-  static Route? generateRoute(RouteSettings settings) {
+  static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.loginScreen:
         return MaterialPageRoute<dynamic>(builder: (_) => LoginScreen());

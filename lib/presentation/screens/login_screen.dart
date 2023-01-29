@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
+      listener: (BuildContext context, AuthState state) {
         if(state is LoginSuccessAuthState){
           //TODO: navigateToAlbumsScreen
           serviceLocator.registerLazySingleton<User>(() => state.user);
@@ -88,6 +88,7 @@ class LoginScreen extends StatelessWidget {
         if (!value.trim().contains('@')) {
           return LocaleKeys.wrongEmailAddress.tr();
         }
+        return null;
       },
     );
   }
@@ -116,6 +117,7 @@ class LoginScreen extends StatelessWidget {
               if (value.trim().length < 6) {
                 return LocaleKeys.passwordErrorMsg.tr();
               }
+              return null;
             },
           );
         }
@@ -173,14 +175,14 @@ class LoginScreen extends StatelessWidget {
 
   Widget _buildChooseLanguage(BuildContext context){
     return Column(
-      children: [
+      children: <Widget>[
         Text(LocaleKeys.chooseLanguage.tr()),
         const SizedBox(height: 8,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             AppButton(
-              text: LocaleKeys.English.tr(),
+              text: LocaleKeys.english.tr(),
               fontSize: 12,
               paddingH: 16,
               onPressed: () async{
@@ -190,7 +192,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(width: 24.0,),
             AppButton(
-              text: LocaleKeys.Arabic.tr(),
+              text: LocaleKeys.arabic.tr(),
               fontSize: 12,
               paddingH: 16,
               onPressed: () async{

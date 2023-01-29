@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
+      providers: <BlocProvider<StateStreamableSource<Object?>>>[
         BlocProvider<AuthBloc>(
           create: (BuildContext context){
             return serviceLocator<AuthBloc>();

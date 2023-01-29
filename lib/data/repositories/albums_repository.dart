@@ -18,10 +18,10 @@ class AlbumsRepository extends BaseAlbumsRepository{
   Future<Either<Failure, List<Album>>> getAlbums(int page) async{
     final List<Album> result = await baseAlbumsRemoteDataSource.getAlbums(page);
     try{
-      return Right(result);
+      return Right<Failure, List<Album>>(result);
     }
     on ServerFailure catch(failure){
-      return Left(ServerFailure(message: failure.message));
+      return Left<Failure, List<Album>>(ServerFailure(message: failure.message));
     }
 
   }
@@ -30,9 +30,9 @@ class AlbumsRepository extends BaseAlbumsRepository{
   Future<Either<Failure, List<Photo>>> getPhotosByAlbumId(int albumId) async{
     final List<Photo> result = await baseAlbumsRemoteDataSource.getPhotosByAlbumId(albumId);
     try{
-      return Right(result);
+      return Right<Failure, List<Photo>>(result);
     } on ServerFailure catch(failure){
-      return Left(ServerFailure(message: failure.message));
+      return Left<Failure, List<Photo>>(ServerFailure(message: failure.message));
     }
   }
 

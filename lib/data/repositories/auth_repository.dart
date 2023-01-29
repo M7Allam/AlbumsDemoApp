@@ -15,9 +15,9 @@ class AuthRepository extends BaseAuthRepository{
   Future<Either<Failure, User>> signInWithEmailAndPassword(String email, String password) async{
     final User user = await baseAuthRemoteDatasource.signInWithEmailAndPassword();
     try{
-      return Right(user);
+      return Right<Failure, User>(user);
     } on ServerFailure catch(failure){
-      return Left(ServerFailure(message: failure.message));
+      return Left<Failure, User>(ServerFailure(message: failure.message));
     }
   }
 

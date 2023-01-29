@@ -84,7 +84,7 @@ class AlbumsScreen extends StatelessWidget {
       primary: false,
       shrinkWrap: true,
       itemCount: albums.length,
-      itemBuilder: (context, index) {
+      itemBuilder: (BuildContext context, int index) {
         return AlbumItem(
           album: albums[index],
           onTap: () {
@@ -114,7 +114,7 @@ class AlbumsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext contextBuilder) {
         return BlocBuilder<PhotosBloc, PhotosState>(
-          builder: (context, state) {
+          builder: (BuildContext context, PhotosState state) {
             if (state is LoadingPhotosState) {
               return _buildLoading();
             }
